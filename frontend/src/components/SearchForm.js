@@ -27,7 +27,7 @@ class SearchForm extends Component {
 			<Background>
 				<h3>Type something to search for it here</h3>
 				<form>
-					<Input type="text"/>
+					<Input id="name" onChange={this.props.triggeredUpdate}/>
 				</form>
 			</Background>
 		);

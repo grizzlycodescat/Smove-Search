@@ -9,14 +9,31 @@ const Outer = styled.div`
 	text-align:center;
 `;
 
+
 class App extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			query: "",
+		};
+		// this.handleSearchChange = this.handleSearchChange.bind(this);
+	}
+
+	handleSearchChange = (event) => {
+		this.setState({
+			query: event.target.value,
+		});
+	}
+
+
 
 	render() {
 		return (
 			<Outer>
 				<Header/>
-				<SearchForm/>
-				<Results/>
+				<SearchForm triggeredUpdate={this.handleSearchChange}/>
+				<Results searchQuery={this.state.query}/>
 				<Map/>
 			</Outer>
 		);
