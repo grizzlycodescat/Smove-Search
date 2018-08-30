@@ -21,6 +21,12 @@ const Input = styled.input`
 	border-radius: 8px;
 `;
 
+const Searchbutton = styled.button`
+	position: relative;
+	top: -29px;
+	left: 6%;
+`;
+
 class SearchForm extends Component {
 	render() {
 		return (
@@ -28,6 +34,7 @@ class SearchForm extends Component {
 				<h3>Type something to search for it here</h3>
 				<form>
 					<Input id="name" onChange={this.props.triggeredUpdate}/>
+					<Searchbutton id="searchButton" onClick={this.props.filterData}>Search</Searchbutton>
 				</form>
 			</Background>
 		);
